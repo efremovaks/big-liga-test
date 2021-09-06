@@ -1,3 +1,25 @@
 .header {
   display: block;
 }
+
+.header__wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+  padding-top: 26px;
+
+  @include viewport--md {
+    padding: 0 24px;
+  }
+
+  @include viewport--sm {
+    padding: 0 16px;
+  }
+
+  &--no-padding {
+    @include viewport--sm {
+      padding: 0;
+    }
+  }
+}

@@ -63,12 +63,12 @@ const svgo = () => {
       .pipe(gulp.dest('source/img'));
 };
 
-const sprite = () => {
-  return gulp.src('source/img/sprite/*.svg')
-      .pipe(svgstore({inlineSvg: true}))
-      .pipe(rename('sprite_auto.svg'))
-      .pipe(gulp.dest('build/img'));
-};
+// const sprite = () => {
+//   return gulp.src('source/img/sprite/*.svg')
+//       .pipe(svgstore({inlineSvg: true}))
+//       .pipe(rename('sprite_auto.svg'))
+//       .pipe(gulp.dest('build/img'));
+// };
 
 const syncserver = () => {
   server.init({
@@ -83,7 +83,7 @@ const syncserver = () => {
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series(css));
   gulp.watch('source/js/**/*.{js,json}', gulp.series(js, refresh));
   gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));
-  gulp.watch('source/img/**/*.svg', gulp.series(copysvg, sprite, html, refresh));
+  gulp.watch('source/img/**/*.svg', gulp.series(copysvg, html, refresh));
   gulp.watch('source/img/**/*.{png,jpg}', gulp.series(copypngjpg, html, refresh));
 };
 
@@ -122,7 +122,7 @@ const clean = () => {
   return del('build');
 };
 
-const build = gulp.series(clean, svgo, copy, css, sprite, js, html);
+const build = gulp.series(clean, svgo, copy, css, js, html);
 
 const start = gulp.series(build, syncserver);
 

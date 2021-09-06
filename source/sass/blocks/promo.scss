@@ -1,0 +1,55 @@
+.promo {
+  max-width: 100%;
+  margin-top: 123px;
+}
+
+.promo__wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  height: 100vh;
+
+  @include viewport--md {
+    display: block;
+  }
+}
+
+.promo__header {
+  @include viewport--md {
+    max-width: 640px;
+  }
+}
+
+.promo__header h1 {
+  font-family: $font-family--neue-machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 96px;
+  color: $color-neon-blue;
+  margin: 0;
+}
+
+.promo__description {
+  @include viewport--md {
+    display: none;
+  }
+}
+
+.promo__description p {
+  font-family: $font-family--neue-machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 40px;
+  color: $color-default-black;
+  margin: 0;
+  padding-top: 69%;
+  padding-left: 30px;
+}
+
+.promo__description svg {
+  position: absolute;
+  top: -58px;
+  right: 22px;
+}
