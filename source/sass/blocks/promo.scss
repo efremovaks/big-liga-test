@@ -1,6 +1,10 @@
 .promo {
   max-width: 100%;
   margin-top: 123px;
+
+  @include viewport--md {
+    margin-top: 20px;
+  }
 }
 
 .promo__wrapper {
@@ -11,12 +15,13 @@
 
   @include viewport--md {
     display: block;
+    cursor: pointer;
   }
 }
 
 .promo__header {
   @include viewport--md {
-    max-width: 640px;
+    padding-top: 170px;
   }
 }
 
@@ -28,11 +33,37 @@
   line-height: 96px;
   color: $color-neon-blue;
   margin: 0;
+  user-select: none;
 }
 
 .promo__description {
   @include viewport--md {
-    display: none;
+    position: absolute;
+    left: -200%;
+  }
+}
+
+.show .promo__description,
+.hidden .promo__description {
+  @include viewport--md {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: $color-neon-blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left .7s linear;
+  }
+}
+
+.hidden .promo__description {
+  @include viewport--md {
+    left: -200%;
+    transition: left .5s linear;
   }
 }
 
@@ -44,12 +75,31 @@
   line-height: 40px;
   color: $color-default-black;
   margin: 0;
-  padding-top: 69%;
+  padding-top: 262px;
   padding-left: 30px;
+
+  @include viewport--md {
+    color: $color-default-white;
+    padding-top: 35px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 20px;
+  }
 }
 
 .promo__description svg {
   position: absolute;
   top: -58px;
-  right: 22px;
+  left: 65%;
+
+  @include viewport--md {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+
+    .svg-item {
+      fill: $color-default-white;
+    }
+  }
 }

@@ -24,7 +24,7 @@ const preloader = () => {
     }
 
     hide() {
-      loader.classList.add('is-ready');
+      this.el.classList.add('is-ready');
       window.addEventListener('keydown', function (evt) {
         if (evt.key === 'Enter') {
           loader.classList.add('is-open');
@@ -34,6 +34,7 @@ const preloader = () => {
       });
     }
   }
+
 
   // eslint-disable-next-line no-new
   new Preloader(preloaderNode);
