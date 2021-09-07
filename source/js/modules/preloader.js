@@ -27,10 +27,9 @@ const preloader = () => {
       this.el.classList.add('is-ready');
       window.addEventListener('keydown', function (evt) {
         if (evt.key === 'Enter') {
-          loader.classList.add('is-open');
+          loader.classList.add('is-hidden');
           document.body.classList.remove('scroll-lock');
         }
-        loader.classList.add('is-hidden');
       });
     }
   }

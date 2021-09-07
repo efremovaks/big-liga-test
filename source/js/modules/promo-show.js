@@ -16,7 +16,6 @@ const promoShow = () => {
 };
 
 
-
 export {
   promoShow
 };

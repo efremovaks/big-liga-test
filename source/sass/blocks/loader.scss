@@ -67,7 +67,11 @@ $preloader-transition-function: cubic-bezier(0, 0.14, 0.15, 1.1);
     }
   }
 
-  &.is-hidden,
+  &.is-hidden {
+    top: -200%;
+    transition: top .7s linear;
+  }
+
   &:not(.js-preloader) {
     display: none;
   }

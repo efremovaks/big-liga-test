@@ -710,7 +710,11 @@ button,
     opacity: 0;
     -webkit-transition: opacity 5s ease-in-out;
     transition: opacity 5s ease-in-out; }
-  .loader.is-hidden, .loader:not(.js-preloader) {
+  .loader.is-hidden {
+    top: -200%;
+    -webkit-transition: top .7s linear;
+    transition: top .7s linear; }
+  .loader:not(.js-preloader) {
     display: none; }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
